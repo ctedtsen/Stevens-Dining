@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 
 const Home = () => {
-  let dining_loacitons =[
+  let dining_locations =[
     {
       name: "Pierce Cafe",
       description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
@@ -193,7 +193,7 @@ const Home = () => {
     );
   };
 
-  let card = dining_loacitons.map((location) => {
+  let card = dining_locations.map((location) => {
     return buildCard(location);
   })
 
@@ -204,7 +204,7 @@ const Home = () => {
   const handleLeftArrowClick = () => {
     let newSlideIndex;
     if (currentSlideIndex === 0) {
-      newSlideIndex = dining_loacitons.length - 1;
+      newSlideIndex = dining_locations.length - 1;
     } else {
       newSlideIndex = currentSlideIndex - 1;
     }
@@ -213,13 +213,13 @@ const Home = () => {
 
   const handleRightArrowClick = useCallback(() => {
     let newSlideIndex;
-    if (currentSlideIndex === dining_loacitons.length - 1) {
+    if (currentSlideIndex === dining_locations.length - 1) {
       newSlideIndex = 0;
     } else {
       newSlideIndex = currentSlideIndex + 1;
     }
     setCurrentSlideIndex(newSlideIndex);
-  }, [currentSlideIndex, dining_loacitons]);
+  }, [currentSlideIndex, dining_locations]);
 
   useEffect(() => {
     if (timerRef.current) {
@@ -236,10 +236,10 @@ const Home = () => {
     <body>
       <div className="slide-show-div">
         <div className="slide-div">
-          <Link to={`/${dining_loacitons[currentSlideIndex].link}`}>
+          <Link to={dining_locations[currentSlideIndex].link}>
             <img
-              src={dining_loacitons[currentSlideIndex].img}
-              alt={dining_loacitons[currentSlideIndex].name}
+              src={dining_locations[currentSlideIndex].img}
+              alt={dining_locations[currentSlideIndex].name}
             ></img>
           </Link>
 
@@ -252,7 +252,7 @@ const Home = () => {
           </div>
         </div>
         <div className="img-title">
-          <h2 className="h2-txt">{dining_loacitons[currentSlideIndex].name}</h2>
+          <h2 className="h2-txt">{dining_locations[currentSlideIndex].name}</h2>
         </div>
       </div>
 
