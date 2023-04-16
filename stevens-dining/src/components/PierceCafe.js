@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const PierceCafe = () => {
     let location = {
-        name: "Piercwe Cafe",
+        name: "Pierce Cafe",
         description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
         location: "Howe Center Second Floor",
         hours: "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday; 11:00 AM to 5:00 PM",
