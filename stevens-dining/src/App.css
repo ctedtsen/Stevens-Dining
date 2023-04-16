@@ -25,21 +25,33 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #000000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-logo {
+	height: 200px;
+  display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.title {
+	font-weight: bold;
+	color: #bf1c1c;
+}
+
+.img {
+  width: 100%
+}
+
+.link {
+  color: #bf1c1c;
 }
 
 
 .slide-show-div {
-  width: 45%;
+  width: 38%;
   height: 100%;
   position: relative;
   left: 30%;
@@ -126,4 +138,16 @@
 .title{
   position: relative;
   left: 2%;
+}
+.card-link {
+  padding: 0.4rem 0.8rem;
+	background-color: #bf1c1c;
+	border-radius: 3px;
+	color: #ffffff;
+	text-decoration: none !important;
+	margin: 5px;
+}
+
+.grid{
+  margin-top: 115px;
 }

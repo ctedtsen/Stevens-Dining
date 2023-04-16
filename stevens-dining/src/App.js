@@ -10,11 +10,15 @@ import Italia from './components/Italia';
 import America from './components/America';
 import Pierce from './components/Pierce';
 import PierceCafe from './components/PierceCafe';
+import logo from './img/logo.png'
 
 function App() {
   return (
     <Router>
       <div>
+          <div className='img'>
+            <img src={logo}  alt="Logo" className='App-logo'/>
+          </div>
           <Routes>
               <Route path='/' element={<Home />} />
               <Route path='sono' element={<Sono />}/>

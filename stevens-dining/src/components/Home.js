@@ -1,50 +1,202 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import noImage from '../img/no_image.png'
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography
+} from '@mui/material';
 
 const Home = () => {
-  const images = [
-    {
-      name: "Pierce Dining Hall",
-      url: "https://www.stevensdining.com/wp-content/uploads/2020/08/Pierce-Photo-scaled-e1620153827402-1536x649.jpg",
-      linkName: "pierce",
-    },
+  let dining_loacitons =[
     {
       name: "Pierce Cafe",
-      url: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2FOUV8PdrYVTyR4E6N43zrl%2F16a1cffae8f6a3b915cac1e35355c4c9%2FDSCF1308.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
-      linkName: "piercecafe",
+      description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
+      location: "Howe Center Second Floor",
+      hours: "Monday - Friday: 8 am - 8 pm, Saturday - Sunday: 8 am - 6 pm",
+      crowd_fav: "Coffee",
+      rating: "3",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/17.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/16.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/14.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/15.jpg",
+      ],
+      img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2FOUV8PdrYVTyR4E6N43zrl%2F16a1cffae8f6a3b915cac1e35355c4c9%2FDSCF1308.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
+      link: "/piercecafe", 
+      id: 7
     },
     {
       name: "America's Cup",
-      url: "https://s3.amazonaws.com/secretsaucefiles/photos/images/000/189/616/large/Red_gray.jpg?1511324205",
-      linkName: "america",
+      description: "At America's Cup, you can stop by the Starbucks for snacks and a coffe, or head over to Create for sandwiches and salads.",
+      location: "Library",
+      hours: "Monday - Friday: 9 am - 6 pm (Starbucks), 11 am - 6 pm (Create)",
+      crowd_fav: "Chicken Salad",
+      rating: "4",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/8.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/5.jpg"
+      ], 
+      img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2F6kglSEkQkhgKD8aJd88b8r%2Ffe1f30df06c4f862c701d8919e8d6057%2FCampus_Public_Spaces__5_.png%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
+      link: "/america",
+      id: 1
     },
     {
       name: "Gateway Cafe",
-      url: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2F3u1j1fbjJe1D2HGaxeqWU0%2F435b90df29dc5063098c81804791ae4f%2Fnewcafe.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
-      linkName: "gateway",
+      description: "At Gateway Cafe, you can get a Lavazza coffe as well as various snacks and meals, including paninis, yogurts parfaits, breakfast sandwhiches, and smoothies.",
+      location: "Gateway North",
+      hours: "Monday - Friday: 8 am - 8 pm",
+      crowd_fav: "Panini",
+      rating: "3",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/10.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/11.jpg",
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/12.jpg"
+      ],
+      img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2F3u1j1fbjJe1D2HGaxeqWU0%2F435b90df29dc5063098c81804791ae4f%2Fnewcafe.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
+      link: "/gateway",
+      id: 2
+    },
+    {
+      name: "Pierce Dining Hall",
+      description: "Pierce Dining Hall serves breakfast, lunch, and dinner, having different items on different days.",
+      location: "Howe Center",
+      hours: "Monday - Sunday: 7 am - Midnight",
+      crowd_fav: "Breakfast",
+      rating: "1",
+      menu: [
+        "https://www.stevensdining.com/webtrition-pierce-dining-hall/",
+      ],
+      img: "https://www.stevensdining.com/wp-content/uploads/2020/08/Pierce-Photo-scaled-e1620153827402.jpg",
+      link: "/pierce",
+      id: 6
     },
     {
       name: "Grill Nation",
-      url: "https://www.stevensdining.com/wp-content/uploads/2022/09/1-1-e1663099635784-1536x357.jpg",
-      linkName: "grill",
+      description: "Grill Nation has a variety of American Cuisine, including burgers, hcicken tenders, and more. Customers have the ability to customize burgers and sandwiches in many ways.",
+      location: "UCC Marketplace",
+      hours: "Monday - Sunday: 7 am - Midnight",
+      crowd_fav: "Burger",
+      rating: "2",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/18.jpg"
+      ],
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/1-1-e1663099635784.jpg",
+      link: "/grill", 
+      id: 3
     },
     {
-      name: "Sono",
-      url: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756-1536x411.jpg",
-      linkName: "sono",
-    },
-    {
-      name: "The Halal Stall",
-      url: "https://www.stevensdining.com/wp-content/uploads/2022/09/8-1-e1663099890551-1536x346.jpg",
-      linkName: "halal",
+      name: "Halal Stall",
+      description: "Celebrate Afghan cuisine at the Halal Stall. Here, customers can cutomize their meal, with choices between bowls, salads, and pitas, and even more choices for the proteins and toppings.",
+      location: "UCC Marketplace",
+      hours: "Monday - Sunday: 11 am - Midnight",
+      crowd_fav: "Pita with Chicken Schwarma",
+      rating: "5",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/10/Retail-Menu-Boards-2022-20.jpg"
+      ],
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756.jpg",
+      link: "/halal",
+      id: 4
     },
     {
       name: "Piccola Italia",
-      url: "https://www.stevensdining.com/wp-content/uploads/2022/09/7-1-e1663099991652-1536x353.jpg",
-      linkName: "italia",
+      description: "At Piccola Italia serves traditional itallian food, including flatbread pizzas, calzones, sandwiches, pasta, and more!",
+      location: "UCC Marketplace",
+      hours: "Monday - Sunday: 11 am - 8 pm",
+      crowd_fav: "Cheese Pizza",
+      rating: "3",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/7-1-e1663099991652.jpg"
+      ], 
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/7-1-e1663099991652.jpg",
+      link: "/italia",
+      id: 5
     },
+    {
+      name: "Sono",
+      description: "Celebrate Latin American cuisine at Sono. At Sono you can enjoy burritos, quesadillas, tacos, bowls, and more! You are able to design your own meal from a selection of proteins, bean, rice, sauces, and toppings.",
+      location: "UCC Marketplace",
+      hours: "Monday - Sunday: 11 am - 8 pm",
+      crowd_fav: "Chicken Burrito",
+      rating: "5",
+      menu: [
+        "https://www.stevensdining.com/wp-content/uploads/2022/09/Sono-Website.001-scaled.jpeg"
+      ],
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756.jpg",
+      link: "/sono",
+      id: 8
+    }
   ];
+
+  const regex = /(<([^>]+)>)/gi;
+
+  const buildCard = (location) => {
+    return (
+      <Grid item xs={12} sm={7} md={5} lg={4} xl={3} key={location.id}>
+        <Card
+          variant='outlined'
+          sx={{
+            maxWidth: 450,
+            height: 'auto',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            borderRadius: 5,
+            border: '1px solid #bf1c1c',
+            boxShadow:
+              '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);'
+          }}
+        >
+          <CardActionArea>
+            <Link to={location.link} className='link'>
+              <CardMedia
+                sx={{
+                  height: '100%',
+                  width: '100%'
+                }}
+                component='img'
+                image={
+                  location.img
+                    ? location.img
+                    : noImage
+                }
+                title='location image'
+              />
+
+              <CardContent>
+                <Typography
+                  sx={{
+                    borderBottom: '1px solid #bf1c1c',
+                    fontWeight: 'bold'
+                  }}
+                  gutterBottom
+                  variant='h6'
+                  component='h3'
+                >
+                  {location.name}
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  {location.description
+                    ? location.description.replace(regex, '').substring(0, 139) + '...'
+                    : 'No Description'}
+                  <span>More Info</span>
+                </Typography>
+              </CardContent>
+            </Link>
+          </CardActionArea>
+        </Card>
+      </Grid>
+    );
+  };
+
+  let card = dining_loacitons.map((location) => {
+    return buildCard(location);
+  })
+
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const timerRef = useRef();
@@ -52,7 +204,7 @@ const Home = () => {
   const handleLeftArrowClick = () => {
     let newSlideIndex;
     if (currentSlideIndex === 0) {
-      newSlideIndex = images.length - 1;
+      newSlideIndex = dining_loacitons.length - 1;
     } else {
       newSlideIndex = currentSlideIndex - 1;
     }
@@ -61,13 +213,13 @@ const Home = () => {
 
   const handleRightArrowClick = useCallback(() => {
     let newSlideIndex;
-    if (currentSlideIndex === images.length - 1) {
+    if (currentSlideIndex === dining_loacitons.length - 1) {
       newSlideIndex = 0;
     } else {
       newSlideIndex = currentSlideIndex + 1;
     }
     setCurrentSlideIndex(newSlideIndex);
-  }, [currentSlideIndex, images]);
+  }, [currentSlideIndex, dining_loacitons]);
 
   useEffect(() => {
     if (timerRef.current) {
@@ -79,19 +231,15 @@ const Home = () => {
 
     return () => clearTimeout(timerRef.current);
   }, [handleRightArrowClick]);
-
+  
   return (
     <body>
-      <div className="title">
-        <h1>Stevens Dining</h1>
-      </div>
-
       <div className="slide-show-div">
         <div className="slide-div">
-          <Link to={`/${images[currentSlideIndex].linkName}`}>
+          <Link to={`/${dining_loacitons[currentSlideIndex].link}`}>
             <img
-              src={images[currentSlideIndex].url}
-              alt={images[currentSlideIndex].name}
+              src={dining_loacitons[currentSlideIndex].img}
+              alt={dining_loacitons[currentSlideIndex].name}
             ></img>
           </Link>
 
@@ -104,35 +252,21 @@ const Home = () => {
           </div>
         </div>
         <div className="img-title">
-          <h2 className="h2-txt">{images[currentSlideIndex].name}</h2>
+          <h2 className="h2-txt">{dining_loacitons[currentSlideIndex].name}</h2>
         </div>
       </div>
-      <div className="dining-div">
-        <h2>Options:</h2>
-        <p>
-          <Link to="/pierce">Pierce Dining Hall</Link>
-        </p>
-        <p>
-          <Link to="/piercecafe">Pierce Cafe</Link>
-        </p>
-        <p>
-          <Link to="/america">America's Cup</Link>
-        </p>
-        <p>
-          <Link to="/gateway">Gateway Cafe</Link>
-        </p>
-        <p>
-          <Link to="/grill">Grill Nation</Link>
-        </p>
-        <p>
-          <Link to="/sono">Sono</Link>
-        </p>
-        <p>
-          <Link to="/halal">The Halal Stall</Link>
-        </p>
-        <p>
-          <Link to="/italia">Piccola Italia</Link>
-        </p>
+
+      <div className="grid">
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            flexGrow: 1,
+            flexDirection: 'row'
+          }}
+        >
+          {card}
+        </Grid>
       </div>
     </body>
   );
