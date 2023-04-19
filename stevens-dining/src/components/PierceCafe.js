@@ -13,7 +13,7 @@ import {
 
 const PierceCafe = () => {
     let location = {
-        name: "Piercwe Cafe",
+        name: "Pierce Cafe",
         description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
         location: "Howe Center Second Floor",
         hours: "Monday - Friday: 8 am - 8 pm, Saturday - Sunday: 8 am - 6 pm",

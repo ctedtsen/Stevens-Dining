@@ -1,6 +1,6 @@
-import React from 'react';
-import '../App.css';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import "../App.css";
+import { Link } from "react-router-dom";
 import noImage from '../img/no_image.png'
 import {
   Card,
@@ -12,9 +12,9 @@ import {
 } from '@mui/material';
 
 const Home = () => {
-  let dining_loacitons =[
+  let dining_locations =[
     {
-      name: "Piercwe Cafe",
+      name: "Pierce Cafe",
       description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
       location: "Howe Center Second Floor",
       hours: "Monday - Friday: 8 am - 8 pm, Saturday - Sunday: 8 am - 6 pm",
@@ -193,13 +193,70 @@ const Home = () => {
     );
   };
 
-  let card = dining_loacitons.map((location) => {
+  let card = dining_locations.map((location) => {
     return buildCard(location);
   })
+
+
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const timerRef = useRef();
+
+  const handleLeftArrowClick = () => {
+    let newSlideIndex;
+    if (currentSlideIndex === 0) {
+      newSlideIndex = dining_locations.length - 1;
+    } else {
+      newSlideIndex = currentSlideIndex - 1;
+    }
+    setCurrentSlideIndex(newSlideIndex);
+  };
+
+  const handleRightArrowClick = useCallback(() => {
+    let newSlideIndex;
+    if (currentSlideIndex === dining_locations.length - 1) {
+      newSlideIndex = 0;
+    } else {
+      newSlideIndex = currentSlideIndex + 1;
+    }
+    setCurrentSlideIndex(newSlideIndex);
+  }, [currentSlideIndex, dining_locations]);
+
+  useEffect(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    timerRef.current = setTimeout(() => {
+      handleRightArrowClick();
+    }, 4000);
+
+    return () => clearTimeout(timerRef.current);
+  }, [handleRightArrowClick]);
   
   return (
     <body>
-      <div>
+      <div className="slide-show-div">
+        <div className="slide-div">
+          <Link to={dining_locations[currentSlideIndex].link}>
+            <img
+              src={dining_locations[currentSlideIndex].img}
+              alt={dining_locations[currentSlideIndex].name}
+            ></img>
+          </Link>
+
+          <div className="left-arrow">
+            <button onClick={handleLeftArrowClick}>&#60;</button>
+          </div>
+
+          <div className="right-arrow">
+            <button onClick={handleRightArrowClick}>&#62;</button>
+          </div>
+        </div>
+        <div className="img-title">
+          <h2 className="h2-txt">{dining_locations[currentSlideIndex].name}</h2>
+        </div>
+      </div>
+
+      <div className="grid">
         <Grid
           container
           spacing={2}
