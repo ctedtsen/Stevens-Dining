@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -29,11 +18,14 @@
 }
 
 .App-logo {
-	height: 200px;
+	height: 100px;
   display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 350px;
+  position: absolute;
+  left: 10px;
+  top: 0px;
 }
 
 .title {
@@ -51,16 +43,17 @@
 
 
 .slide-show-div {
-  width: 38%;
-  height: 100%;
-  position: relative;
-  left: 30%;
-  top: 10%;
+  width: 480px;
+  height: 120px;
+  position: absolute;
+  left: 650px;
+  top: 0px;
   align-items: center;
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  background-color: #282c34;
 }
 
 .slide-div {
@@ -70,30 +63,31 @@
   justify-content: center;
   background-color: #282c34;
   padding: 10px;
+  height: 100px;
 }
 
 .slide-div img {
-  height: 370px;
-  min-width: 750px;
-  max-width: 750px;
+  height: 100px;
+  min-width: 400px;
+  max-width: 480px;
   border-radius: 5px;
 }
 
 .h2-txt {
-  font-size: 75px;
+  font-size: 35px;
   color: rgb(193, 41, 41);
   text-align: left;
-  position: relative;
-  width: fit-content;
-  height: fit-content;
+  position: absolute;
+  padding: 0;
+  margin: 0;
 }
 
 .img-title {
   position: absolute;
-  width: 100%;
-  height: 100px;
-  top: 85%;
+  width: 700px;
+  height: 50px;
   left: 0;
+  top: 115px;
 }
 .right-arrow {
   font-size: 50px;
@@ -102,7 +96,7 @@
   bottom: 0;
   left: 90%;
   right: 0%;
-  height: fit-content;
+  height: 60px;
   margin: auto;
 }
 
@@ -113,7 +107,7 @@
   bottom: 0;
   left: 0%;
   right: 90%;
-  height: fit-content;
+  height: 60px;
   margin: auto;
 }
 
@@ -149,5 +143,6 @@
 }
 
 .grid{
-  margin-top: 115px;
+  position: absolute;
+  top: 200px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import Home from './components/Home';
 import Sono from './components/Sono';
 import Grill from './components/Grill';
@@ -17,7 +17,9 @@ function App() {
     <Router>
       <div>
           <div className='img'>
-            <img src={logo}  alt="Logo" className='App-logo'/>
+            <Link to="/">
+              <img src={logo}  alt="Logo" className='App-logo'/>
+            </Link>
           </div>
           <Routes>
               <Route path='/' element={<Home />} />
