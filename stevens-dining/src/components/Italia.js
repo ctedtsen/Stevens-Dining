@@ -27,6 +27,8 @@ const Italia = () => {
         id: 5
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -113,6 +115,7 @@ const Italia = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default Italia;

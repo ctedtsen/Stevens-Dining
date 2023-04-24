@@ -30,6 +30,8 @@ const PierceCafe = () => {
         id: 7
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -140,6 +142,7 @@ const PierceCafe = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default PierceCafe;

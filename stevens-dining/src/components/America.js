@@ -28,6 +28,8 @@ const America = () => {
         id: 1
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -122,6 +124,7 @@ const America = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default America;

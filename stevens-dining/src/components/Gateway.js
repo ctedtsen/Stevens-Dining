@@ -29,6 +29,8 @@ const Gateway = () => {
       id: 2
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -131,6 +133,7 @@ const Gateway = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default Gateway;

@@ -27,6 +27,8 @@ const Pierce = () => {
         id: 6
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -113,6 +115,7 @@ const Pierce = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default Pierce;

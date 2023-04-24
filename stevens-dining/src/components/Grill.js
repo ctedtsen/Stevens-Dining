@@ -27,6 +27,8 @@ const Grill = () => {
         id: 3
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -113,6 +115,7 @@ const Grill = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default Grill;
