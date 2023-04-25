@@ -11,24 +11,24 @@ import {
     CardHeader
   } from '@mui/material';
 
-const Gateway = () => {
+const Pierce = () => {
     let location = {
-        name: "Gateway Cafe",
-      description: "At Gateway Cafe, you can get a Lavazza coffe as well as various snacks and meals, including paninis, yogurts parfaits, breakfast sandwhiches, and smoothies.",
-      location: "Gateway North",
-      hours: "Monday - Friday: 8 am - 8 pm",
-      crowd_fav: "Panini",
-      rating: "3",
-      menu: [
-        "https://www.stevensdining.com/wp-content/uploads/2022/09/10.jpg",
-        "https://www.stevensdining.com/wp-content/uploads/2022/09/11.jpg",
-        "https://www.stevensdining.com/wp-content/uploads/2022/09/12.jpg"
-      ],
-      img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2F3u1j1fbjJe1D2HGaxeqWU0%2F435b90df29dc5063098c81804791ae4f%2Fnewcafe.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
-      link: "/gateway",
-      id: 2
+        name: "Pierce Dining Hall",
+        description: "Pierce Dining Hall serves breakfast, lunch, and dinner, having different items on different days.",
+        location: "Howe Center",
+        hours: "Monday - Sunday: 7 am - Midnight",
+        crowd_fav: "Breakfast",
+        rating: "1",
+        menu: [
+            "https://www.stevensdining.com/webtrition-pierce-dining-hall/",
+        ],
+        img: "https://www.stevensdining.com/wp-content/uploads/2020/08/Pierce-Photo-scaled-e1620153827402.jpg",
+        link: "/pierce",
+        id: 6
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -105,23 +105,7 @@ const Gateway = () => {
               <div>
                 <dt className='title'>Menu:</dt>
                 {location.menu? (
-                  <img src={location.menu[0]} className="img" alt="menu" />
-                ) : (
-                  <dl>N/A</dl>
-                )}
-              </div>
-              <br/>
-              <div>
-                {location.menu? (
-                  <img src={location.menu[1]} className="img" alt="menu" />
-                ) : (
-                  <dl>N/A</dl>
-                )}
-              </div>
-              <br/>
-              <div>
-                {location.menu? (
-                  <img src={location.menu[2]} className="img" alt="menu" />
+                  <dl>Pierce's menu can be found <Link to={location.menu[0]} className='link'>here</Link></dl>
                 ) : (
                   <dl>N/A</dl>
                 )}
@@ -131,6 +115,7 @@ const Gateway = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
-export default Gateway;
+export default Pierce;

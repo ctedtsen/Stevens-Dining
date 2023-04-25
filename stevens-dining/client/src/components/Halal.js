@@ -22,11 +22,13 @@ const Halal = () => {
         menu: [
             "https://www.stevensdining.com/wp-content/uploads/2022/10/Retail-Menu-Boards-2022-20.jpg"
         ],
-        img: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756.jpg",
+        img: "https://www.stevensdining.com/wp-content/uploads/2022/09/8-1-e1663099890551.jpg",
         link: "/halal",
         id: 4
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -113,6 +115,7 @@ const Halal = () => {
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
 export default Halal;

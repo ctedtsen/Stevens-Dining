@@ -10,8 +10,7 @@ import {
   Grid,
   Typography
 } from '@mui/material';
-import SlideShow from "./SlideShow";
-const Home = () => {
+const Locations = () => {
   let dining_locations =[
     {
       name: "Pierce Cafe",
@@ -99,7 +98,7 @@ const Home = () => {
       menu: [
         "https://www.stevensdining.com/wp-content/uploads/2022/10/Retail-Menu-Boards-2022-20.jpg"
       ],
-      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756.jpg",
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/8-1-e1663099890551.jpg",
       link: "/halal",
       id: 4
     },
@@ -202,8 +201,6 @@ const Home = () => {
   
   return (
     <body>
-      
-      <SlideShow dining_locations={dining_locations}/>
       <div className="grid">
         <Grid
           container
@@ -220,4 +217,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Locations;

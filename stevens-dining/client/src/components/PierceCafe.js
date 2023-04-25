@@ -11,22 +11,27 @@ import {
     CardHeader
   } from '@mui/material';
 
-const Italia = () => {
+const PierceCafe = () => {
     let location = {
-        name: "Piccola Italia",
-        description: "At Piccola Italia serves traditional itallian food, including flatbread pizzas, calzones, sandwiches, pasta, and more!",
-        location: "UCC Marketplace",
-        hours: "Monday - Sunday: 11 am - 8 pm",
-        crowd_fav: "Cheese Pizza",
+        name: "Pierce Cafe",
+        description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
+        location: "Howe Center Second Floor",
+        hours: "Monday - Friday: 8 am - 8 pm, Saturday - Sunday: 8 am - 6 pm",
+        crowd_fav: "Coffee",
         rating: "3",
         menu: [
-            "https://www.stevensdining.com/wp-content/uploads/2022/09/7-1-e1663099991652.jpg"
-        ], 
-        img: "https://www.stevensdining.com/wp-content/uploads/2022/09/7-1-e1663099991652.jpg",
-        link: "/italia",
-        id: 5
+            "https://www.stevensdining.com/wp-content/uploads/2022/09/17.jpg",
+            "https://www.stevensdining.com/wp-content/uploads/2022/09/16.jpg",
+            "https://www.stevensdining.com/wp-content/uploads/2022/09/14.jpg",
+            "https://www.stevensdining.com/wp-content/uploads/2022/09/15.jpg",
+        ],
+        img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2FOUV8PdrYVTyR4E6N43zrl%2F16a1cffae8f6a3b915cac1e35355c4c9%2FDSCF1308.jpg%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
+        link: "/piercecafe", 
+        id: 7
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -63,7 +68,7 @@ const Italia = () => {
             color='textSecondary'
             component='span'
             sx={{
-              borderBottom: '1px solid #bf1c1c',
+              borderBottom: '1px solid#bf1c1c',
               fontWeight: 'bold'
             }}
           >
@@ -108,11 +113,36 @@ const Italia = () => {
                   <dl>N/A</dl>
                 )}
               </div>
+              <br/>
+              <div>
+                {location.menu? (
+                  <img src={location.menu[1]} className="img" alt="menu" />
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <br/>
+              <div>
+                {location.menu? (
+                  <img src={location.menu[2]} className="img" alt="menu" />
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <br/>
+              <div>
+                {location.menu? (
+                  <img src={location.menu[3]} className="img" alt="menu" />
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
             </dl>
             <Link to='/' className='card-link'>Home</Link>
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
-export default Italia;
+export default PierceCafe;

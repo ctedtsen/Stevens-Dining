@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import Sono from './components/Sono';
 import Grill from './components/Grill';
@@ -10,19 +10,20 @@ import Italia from './components/Italia';
 import America from './components/America';
 import Pierce from './components/Pierce';
 import PierceCafe from './components/PierceCafe';
-import logo from './img/logo.png'
+import Navbar from './components/NavBar';
+import Locations from './components/Locations';
 
 function App() {
+  
   return (
     <Router>
       <div>
-          <div className='img'>
-            <Link to="/">
-              <img src={logo}  alt="Logo" className='App-logo'/>
-            </Link>
+          <div>
+            <Navbar />
           </div>
           <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/locations' element={<Locations />} />
               <Route path='sono' element={<Sono />}/>
               <Route path='grill' element={<Grill />}/>
               <Route path='gateway' element={<Gateway />}/>
