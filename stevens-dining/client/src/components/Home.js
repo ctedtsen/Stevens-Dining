@@ -1,6 +1,6 @@
 import React from "react";
-import "../App.css";
 import SlideShow from "./SlideShow";
+import Chat from "./Chat";
 
 const Home = () => {
   let dining_locations =[
@@ -132,6 +132,9 @@ const Home = () => {
       <h1>Steven Dining</h1>
       <br/>
       <SlideShow dining_locations={dining_locations}/>
+      <br/>
+      <br/>
+      <Chat />
     </body>
   );
 };
