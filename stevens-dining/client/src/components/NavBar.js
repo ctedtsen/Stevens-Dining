@@ -11,13 +11,13 @@ function NavigationBar() {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">   
               <Link className="nav-link" to="/" id="link-txt">
-                Home
+                All Locations
               </Link>
             </li>
             <li className="nav-item">   
-              <Link className="nav-link" to="/locations" id="link-txt">
-                All Locations
-              </Link>
+                <Link className="nav-link" to="/chat" id="link-txt">
+                  Chat
+                </Link>
             </li>
           </ul>
             <div className="dropdown">

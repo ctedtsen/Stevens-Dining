@@ -12,6 +12,7 @@ import Pierce from './components/Pierce';
 import PierceCafe from './components/PierceCafe';
 import Navbar from './components/NavBar';
 import Locations from './components/Locations';
+import Chat from './components/Chat';
 
 function App() {
   
@@ -22,8 +23,8 @@ function App() {
             <Navbar />
           </div>
           <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/locations' element={<Locations />} />
+              <Route path='/' element={<Locations />} />
+              <Route path='/chat' element={<Chat />} />
               <Route path='sono' element={<Sono />}/>
               <Route path='grill' element={<Grill />}/>
               <Route path='gateway' element={<Gateway />}/>

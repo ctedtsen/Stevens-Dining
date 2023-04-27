@@ -127,7 +127,7 @@ const Home = () => {
 
   
   return (
-    <>
+    <div>
       <br/>
       <h1>Steven Dining</h1>
       <br/>
@@ -135,7 +135,7 @@ const Home = () => {
       <br/>
       <br/>
       <Chat />
-    </>
+    </div>
   );
 };
 

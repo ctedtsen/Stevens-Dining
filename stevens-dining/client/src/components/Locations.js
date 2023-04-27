@@ -200,7 +200,10 @@ const Locations = () => {
  
   
   return (
-    <body>
+    <div>
+      <br/>
+      <br/>
+      <h1 className="locations-title">Stevens Dining Spots</h1>
       <div className="grid">
         <Grid
           container
@@ -213,7 +216,7 @@ const Locations = () => {
           {card}
         </Grid>
       </div>
-    </body>
+    </div>
   );
 };
 
