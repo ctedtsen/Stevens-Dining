@@ -11,23 +11,24 @@ import {
     CardHeader
   } from '@mui/material';
 
-const America = () => {
+const Grill = () => {
     let location = {
-        name: "America's Cup",
-        description: "At America's Cup, you can stop by the Starbucks for snacks and a coffe, or head over to Create for sandwiches and salads.",
-        location: "Library",
-        hours: "Monday - Friday: 9 am - 6 pm (Starbucks), 11 am - 6 pm (Create)",
-        crowd_fav: "Chicken Salad",
-        rating: "4",
+        name: "Grill Nation",
+        description: "Grill Nation has a variety of American Cuisine, including burgers, hcicken tenders, and more. Customers have the ability to customize burgers and sandwiches in many ways.",
+        location: "UCC Marketplace",
+        hours: "Monday - Sunday: 7 am - Midnight",
+        crowd_fav: "Burger",
+        rating: "2",
         menu: [
-            "https://www.stevensdining.com/wp-content/uploads/2022/09/8.jpg",
-            "https://www.stevensdining.com/wp-content/uploads/2022/09/5.jpg"
-        ], 
-        img: "https://www.stevens.edu/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmviowpldu823%2F6kglSEkQkhgKD8aJd88b8r%2Ffe1f30df06c4f862c701d8919e8d6057%2FCampus_Public_Spaces__5_.png%3Fw%3D640%26h%3D360%26f%3Dcenter%26q%3D80%26fit%3Dfill&w=2400&q=80",
-        link: "/america",
-        id: 1
+            "https://www.stevensdining.com/wp-content/uploads/2022/09/18.jpg"
+        ],
+        img: "https://www.stevensdining.com/wp-content/uploads/2022/09/1-1-e1663099635784.jpg",
+        link: "/grill", 
+        id: 3
     }
     return(
+      <div>
+        <br/>
         <Card 
         variant='outlined'
         sx={{
@@ -109,19 +110,12 @@ const America = () => {
                   <dl>N/A</dl>
                 )}
               </div>
-              <br/>
-              <div>
-                {location.menu? (
-                  <img src={location.menu[1]} className="img" alt="menu" />
-                ) : (
-                  <dl>N/A</dl>
-                )}
-              </div>
             </dl>
             <Link to='/' className='card-link'>Home</Link>
           </Typography>
         </CardContent>
       </Card>
+      </div>
     );
 }
-export default America;
+export default Grill;

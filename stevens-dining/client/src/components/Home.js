@@ -1,16 +1,7 @@
 import React from "react";
-import "../App.css";
-import { Link } from "react-router-dom";
-import noImage from '../img/no_image.png'
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography
-} from '@mui/material';
 import SlideShow from "./SlideShow";
+import Chat from "./Chat";
+
 const Home = () => {
   let dining_locations =[
     {
@@ -99,7 +90,7 @@ const Home = () => {
       menu: [
         "https://www.stevensdining.com/wp-content/uploads/2022/10/Retail-Menu-Boards-2022-20.jpg"
       ],
-      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/3-1-e1663099776756.jpg",
+      img: "https://www.stevensdining.com/wp-content/uploads/2022/09/8-1-e1663099890551.jpg",
       link: "/halal",
       id: 4
     },
@@ -133,90 +124,18 @@ const Home = () => {
     }
   ];
 
-  const regex = /(<([^>]+)>)/gi;
 
-  const buildCard = (location) => {
-    return (
-      <Grid item xs={12} sm={7} md={5} lg={4} xl={3} key={location.id}>
-        <Card
-          variant='outlined'
-          sx={{
-            maxWidth: 450,
-            height: 'auto',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            borderRadius: 5,
-            border: '1px solid #bf1c1c',
-            boxShadow:
-              '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);'
-          }}
-        >
-          <CardActionArea>
-            <Link to={location.link} className='link'>
-              <CardMedia
-                sx={{
-                  height: '100%',
-                  width: '100%'
-                }}
-                component='img'
-                image={
-                  location.img
-                    ? location.img
-                    : noImage
-                }
-                title='location image'
-              />
-
-              <CardContent>
-                <Typography
-                  sx={{
-                    borderBottom: '1px solid #bf1c1c',
-                    fontWeight: 'bold'
-                  }}
-                  gutterBottom
-                  variant='h6'
-                  component='h3'
-                >
-                  {location.name}
-                </Typography>
-                <Typography variant='body2' color='textSecondary' component='p'>
-                  {location.description
-                    ? location.description.replace(regex, '').substring(0, 139) + '...'
-                    : 'No Description'}
-                  <span>More Info</span>
-                </Typography>
-              </CardContent>
-            </Link>
-          </CardActionArea>
-        </Card>
-      </Grid>
-    );
-  };
-
-  let card = dining_locations.map((location) => {
-    return buildCard(location);
-  })
-
-
- 
   
   return (
-    <body>
-      
+    <div>
+      <br/>
+      <h1>Steven Dining</h1>
+      <br/>
       <SlideShow dining_locations={dining_locations}/>
-      <div className="grid">
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            flexGrow: 1,
-            flexDirection: 'row'
-          }}
-        >
-          {card}
-        </Grid>
-      </div>
-    </body>
+      <br/>
+      <br/>
+      <Chat />
+    </div>
   );
 };
 
