@@ -10,7 +10,7 @@ function App() {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io('/');
+    socketRef.current = io('http://localhost:4000');
     return () => {
       socketRef.current.disconnect();
     };
@@ -51,13 +51,6 @@ function App() {
     socketRef.current.emit('user_join', name);
   };
 
-  const onChangeHandler = () => {
-    setChat([]);
-    let room = document.getElementById('room-selector');
-    setPreviousRoom(newRoom);
-    setNewRoom(room.value);
-  }
-
   const onMessageSubmit = (e) => {
     let msgEle = document.getElementById('message');
     let room = document.getElementById('room-selector');
@@ -80,6 +73,13 @@ function App() {
     msgEle.focus();
   };
 
+  const onChangeHandler = () => {
+    setChat([])
+    let room = document.getElementById("room-selector");
+    setPreviousRoom(newRoom);
+    setNewRoom(room.value);
+  }
+
   const renderChat = () => {
     return chat.map(({name, message}, index) => (
       <div key={index}>
@@ -90,10 +90,11 @@ function App() {
     ));
   };
 
+  
   return (
     <div>
       {state.name && (
-        <div className='card-chat'>
+        <div className='card'>
           <div className='render-chat'>
             <h1>Chat Log</h1>
             {renderChat()}
@@ -101,9 +102,9 @@ function App() {
           <form onSubmit={onMessageSubmit}>
             <h1>Messenger</h1>
             <div>
-              <select id="room-selector" onChange = {onChangeHandler}>
+              <select id="room-selector" onChange={onChangeHandler}>
                 <option value="">General</option>
-                <option value="sono">Sono</option>
+                <option value="music">Music</option>
               </select>
               <input
                 name='message'

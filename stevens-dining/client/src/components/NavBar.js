@@ -20,19 +20,19 @@ function NavigationBar() {
               </Link>
             </li>
           </ul>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dining Locations
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/piercecafe">Pierce Cafe</a>
-                    <a class="dropdown-item" href="/america">America's Cup</a>
-                    <a class="dropdown-item" href="/gateway">Gateway Cafe</a>
-                    <a class="dropdown-item" href="/pierce">Pierce Dining Hall</a>
-                    <a class="dropdown-item" href="/grill">Grill Nation</a>
-                    <a class="dropdown-item" href="/halal">Halal Stall</a>
-                    <a class="dropdown-item" href="/italia">Piccola Italia</a>
-                    <a class="dropdown-item" href="/sono">Sono</a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a className="dropdown-item" href="/piercecafe">Pierce Cafe</a>
+                    <a className="dropdown-item" href="/america">America's Cup</a>
+                    <a className="dropdown-item" href="/gateway">Gateway Cafe</a>
+                    <a className="dropdown-item" href="/pierce">Pierce Dining Hall</a>
+                    <a className="dropdown-item" href="/grill">Grill Nation</a>
+                    <a className="dropdown-item" href="/halal">Halal Stall</a>
+                    <a className="dropdown-item" href="/italia">Piccola Italia</a>
+                    <a className="dropdown-item" href="/sono">Sono</a>
                 </div>
             </div>
         </div>
