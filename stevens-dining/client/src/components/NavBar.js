@@ -15,9 +15,9 @@ function NavigationBar() {
               </Link>
             </li>
             <li className="nav-item">   
-                <Link className="nav-link" to="/chat" id="link-txt">
-                  Chat
-                </Link>
+              <Link className="nav-link" to="/chat" id="link-txt">
+                Chat
+              </Link>
             </li>
           </ul>
             <div className="dropdown">

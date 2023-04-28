@@ -17,6 +17,7 @@ const America = () => {
         description: "At America's Cup, you can stop by the Starbucks for snacks and a coffe, or head over to Create for sandwiches and salads.",
         location: "Library",
         hours: "Monday - Friday: 9 am - 6 pm (Starbucks), 11 am - 6 pm (Create)",
+        busyHours: "11 am - 1 pm  and 3 pm to 5 pm",
         crowd_fav: "Chicken Salad",
         rating: "4",
         menu: [
@@ -91,6 +92,14 @@ const America = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}
