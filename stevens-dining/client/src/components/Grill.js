@@ -17,6 +17,7 @@ const Grill = () => {
         description: "Grill Nation has a variety of American Cuisine, including burgers, hcicken tenders, and more. Customers have the ability to customize burgers and sandwiches in many ways.",
         location: "UCC Marketplace",
         hours: "Monday - Sunday: 7 am - Midnight",
+        busyHours: "1 pm - 3 pm  and 7 pm to 9 pm",
         crowd_fav: "Burger",
         rating: "2",
         menu: [
@@ -90,6 +91,14 @@ const Grill = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}

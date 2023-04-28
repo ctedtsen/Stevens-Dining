@@ -17,6 +17,7 @@ const Gateway = () => {
       description: "At Gateway Cafe, you can get a Lavazza coffe as well as various snacks and meals, including paninis, yogurts parfaits, breakfast sandwhiches, and smoothies.",
       location: "Gateway North",
       hours: "Monday - Friday: 8 am - 8 pm",
+      busyHours: "10 am - 12 pm",
       crowd_fav: "Panini",
       rating: "3",
       menu: [
@@ -92,6 +93,14 @@ const Gateway = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}

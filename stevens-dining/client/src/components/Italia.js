@@ -17,6 +17,7 @@ const Italia = () => {
         description: "At Piccola Italia serves traditional itallian food, including flatbread pizzas, calzones, sandwiches, pasta, and more!",
         location: "UCC Marketplace",
         hours: "Monday - Sunday: 11 am - 8 pm",
+        busyHours: "1 pm - 3 pm  and 7 pm to 9 pm",
         crowd_fav: "Cheese Pizza",
         rating: "3",
         menu: [
@@ -90,6 +91,14 @@ const Italia = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}

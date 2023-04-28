@@ -17,6 +17,7 @@ const Sono = () => {
         description: "Celebrate Latin American cuisine at Sono. At Sono you can enjoy burritos, quesadillas, tacos, bowls, and more! You are able to design your own meal from a selection of proteins, bean, rice, sauces, and toppings.",
         location: "UCC Marketplace",
         hours: "Monday - Sunday: 11 am - 8 pm",
+        busyHours: "1 pm - 3 pm  and 7 pm to 9 pm",
         crowd_fav: "Chicken Burrito",
         rating: "5",
         menu: [
@@ -90,6 +91,14 @@ const Sono = () => {
                   <dt className='title'>Hours:</dt>
                   {location.hours? (
                     <dl>{location.hours}</dl>
+                  ) : (
+                    <dl>N/A</dl>
+                  )}
+                </div>
+                <div>
+                <dt className='title'>Busy Hours:</dt>
+                  {location.busyHours? (
+                    <dl>{location.busyHours}</dl>
                   ) : (
                     <dl>N/A</dl>
                   )}
