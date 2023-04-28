@@ -17,6 +17,7 @@ const Halal = () => {
         description: "Celebrate Afghan cuisine at the Halal Stall. Here, customers can cutomize their meal, with choices between bowls, salads, and pitas, and even more choices for the proteins and toppings.",
         location: "UCC Marketplace",
         hours: "Monday - Sunday: 11 am - Midnight",
+        busyHours: "1 pm - 3 pm  and 7 pm to 9 pm",
         crowd_fav: "Pita with Chicken Schwarma",
         rating: "5",
         menu: [
@@ -90,6 +91,14 @@ const Halal = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}

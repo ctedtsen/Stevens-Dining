@@ -17,6 +17,7 @@ const Pierce = () => {
         description: "Pierce Dining Hall serves breakfast, lunch, and dinner, having different items on different days.",
         location: "Howe Center",
         hours: "Monday - Sunday: 7 am - Midnight",
+        busyHours: "6 pm - 8 pm",
         crowd_fav: "Breakfast",
         rating: "1",
         menu: [
@@ -90,6 +91,14 @@ const Pierce = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}

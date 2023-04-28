@@ -134,8 +134,10 @@ h1 {
   top: 10%;
 }
 .title{
-  position: relative;
   left: 2%;
+}
+.text {
+  position: relative;
 }
 .card-link {
   padding: 0.4rem 0.8rem;

@@ -17,6 +17,7 @@ const PierceCafe = () => {
         description: "Pierce Cafe serves coffees, sandwiches, and snacks, including muffins and other pastries.",
         location: "Howe Center Second Floor",
         hours: "Monday - Friday: 8 am - 8 pm, Saturday - Sunday: 8 am - 6 pm",
+        busyHours: "6 pm - 8 pm",
         crowd_fav: "Coffee",
         rating: "3",
         menu: [
@@ -93,6 +94,14 @@ const PierceCafe = () => {
                 <dt className='title'>Hours:</dt>
                 {location.hours? (
                   <dl>{location.hours}</dl>
+                ) : (
+                  <dl>N/A</dl>
+                )}
+              </div>
+              <div>
+                <dt className='title'>Busy Hours:</dt>
+                {location.busyHours? (
+                  <dl>{location.busyHours}</dl>
                 ) : (
                   <dl>N/A</dl>
                 )}
